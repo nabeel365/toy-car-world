@@ -22,7 +22,7 @@ const Navigation = () => {
               <a href="/toys" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">All Toys</a>
               <a href="/mytoys" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">My Toys</a>
               <a href="/addtoy" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Add A Toy</a>
-              <a href="/blogs" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Blogs</a>
+              <Link to="/blogs" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Blogs</Link>
             <Link className='text-white' to="login">Login </Link>
 
             </div>
