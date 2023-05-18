@@ -1,7 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Navigation = () => {
+
+  const {user, userLogOut} = useContext(AuthContext)
+ 
+  const handleUserLogOut = () => {
+    userLogOut()
+            
+  }
+
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -19,12 +29,14 @@ const Navigation = () => {
           <div className="flex">
             <div className="hidden sm:block">
               <a href="/" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-              <a href="/toys" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">All Toys</a>
-              <a href="/mytoys" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">My Toys</a>
-              <a href="/addtoy" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Add A Toy</a>
+              <Link to="/toys" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">All Toys</Link>
+              <Link to="/mytoys" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">My Toys</Link>
+              <Link to="/addtoy" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Add A Toy</Link>
               <Link to="/blogs" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Blogs</Link>
             <Link className='text-white' to="login">Login </Link>
+        
 
+          <button className='text-white' onClick={handleUserLogOut}>LogOut</button>
             </div>
             <div className="ml-4">
               <img src="/profile.jpg" alt="User Profile" className="w-8 h-8 rounded-full" />

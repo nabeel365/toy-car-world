@@ -1,11 +1,11 @@
 import React from 'react';
 
-const AddAToy = () => {
+const MyToys = () => {
     return (
         <div>
-            wcb
+            
         </div>
     );
 };
 
-export default AddAToy;
+export default MyToys;

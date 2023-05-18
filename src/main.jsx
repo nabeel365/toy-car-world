@@ -14,6 +14,10 @@ import Blog from './Components/Blog/Blog.jsx';
 import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 import AuthProvider from './Providers/AuthProvider.jsx';
 import MainContent from './Components/MainContent/MainContent.jsx';
+import MyToys from './Components/MyToys/MyToys.jsx';
+import AllToys from './Components/AllToys/AllToys.jsx';
+import AddAToy from './Components/AddAToy/AddAToy.jsx';
+import PrivateRoute from './Routes/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,7 +41,21 @@ const router = createBrowserRouter([
       {
         path: "blogs",
         element: <Blog></Blog>
+      },
+      {
+        path: "mytoys",
+        element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
+      },
+      {
+        path: "addtoy",
+        element: <PrivateRoute><AddAToy></AddAToy></PrivateRoute>
+      },
+      {
+        path: "toys",
+        element: <AllToys></AllToys>
       }
+
+
 
     ]
   },
