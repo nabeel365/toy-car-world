@@ -13,25 +13,35 @@ import Register from './Components/Register/Register.jsx';
 import Blog from './Components/Blog/Blog.jsx';
 import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 import AuthProvider from './Providers/AuthProvider.jsx';
+import MainContent from './Components/MainContent/MainContent.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home> ,
-    errorElement: <ErrorPage></ErrorPage>
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <MainContent></MainContent>
+
+      },
+      {
+        path: "login",
+        element: <LoginPage></LoginPage>
+      },
+      {
+        path: "register",
+        element: <Register></Register>,
+      },
+      {
+        path: "blogs",
+        element: <Blog></Blog>
+      }
+
+    ]
   },
-  {
-    path: "login",
-    element: <LoginPage></LoginPage>
-  },
-  {
-    path: "register",
-    element: <Register></Register>,
-  },
-  {
-    path: "blogs",
-    element: <Blog></Blog>
-  }
+  
 
 ]);
 
