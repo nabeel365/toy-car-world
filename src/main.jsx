@@ -8,12 +8,22 @@ import {
 import './index.css'
 
 import Home from './Components/Home/Home.jsx';
+import LoginPage from './Components/LoginPage/LoginPage.jsx';
+import Register from './Components/Register/Register.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home> ,
   },
+  {
+    path: "/login",
+    element: <LoginPage></LoginPage>
+  },
+  {
+    path: "/register",
+    element: <Register></Register>,
+  }
 ]);
 
 

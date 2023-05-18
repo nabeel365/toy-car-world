@@ -9,8 +9,8 @@ const Footer = () => {
     <img className='w-20 rounded-full' src="https://media.istockphoto.com/id/1154404179/it/vettoriale/icona-del-volante-e-design-piatto-dellombra.jpg?s=612x612&w=0&k=20&c=dXvOtLEXCAxiszd8lSG_iJlV4voC_IiIhd9UHG4dtpg=" alt="" />
     <div className="stats shadow">
   
-  <div className="stat">
-    <div className="stat-value">ToyCarWorld</div>
+  <div className="stat ">
+    <div className="sm:stat-value text-red-500">ToyCarWorld</div>
   </div>
   
 </div>
