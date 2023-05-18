@@ -8,7 +8,7 @@ import ShopByCategory from '../ShopByCategory/ShopByCategory';
 
 const MainContent = () => {
     return (
-        <div>
+        <div >
             {/* <Outlet></Outlet> */}
             <Banner></Banner>
             <Gallery></Gallery>

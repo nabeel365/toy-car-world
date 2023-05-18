@@ -44,7 +44,7 @@ const CustomerReviews = () => {
   return (
     <section className="bg-gray-100 py-10">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-semibold mb-8">Customer Reviews</h2>
+        <h2 data-aos="flip-left" className="text-3xl font-semibold mb-8">Customer Reviews</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {reviews.map((review) => (
             <div key={review.id} className="bg-white p-6 shadow-md rounded-md">
@@ -77,6 +77,7 @@ const CustomerReviews = () => {
           ))}
         </div>
       </div>
+      
     </section>
   );
 };

@@ -1,12 +1,60 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const LoginPage = () => {
+
+  const {signInWithGoogle, userSignIn} = useContext(AuthContext)
+
+  const [error, setError] = useState('');
+
+
+  const handleUserLogin = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    console.log(form);
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    userSignIn(email, password)
+        .then(result => {
+            const recentUser = result.user;
+            console.log(recentUser);
+            form.reset();
+
+        })
+        .catch(error => {
+            console.log(error)
+            setError(error.message)
+        })
+}
+
+  const handleSignInWithGoogle = () => {
+
+    signInWithGoogle()
+    .then(result => {
+      const googleUser = result.user;
+      console.log(googleUser);
+      setUser(googleUser);
+  })
+  .catch(error => {
+      console.log(error.message);
+  })
+
+ 
+
+  }
+
+
+
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <div className="max-w-md w-full px-6 py-8 bg-white rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold text-center">Login</h2>
-        <form className="mt-8">
+        <form onSubmit={handleUserLogin} className="mt-8">
           <div>
             <label htmlFor="email" className="text-sm font-medium text-gray-700">
               Email
@@ -48,6 +96,7 @@ const LoginPage = () => {
           </div>
           <div className="mt-6">
             <button
+            onClick={handleSignInWithGoogle}
               type="button"
               className="py-2 px-4 bg-red-500 hover:bg-black focus:ring-red-500 focus:ring-offset-red-200 text-white w-full rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 text-sm font-medium"
             >
