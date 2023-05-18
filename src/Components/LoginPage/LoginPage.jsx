@@ -1,13 +1,19 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const LoginPage = () => {
 
-  const {signInWithGoogle, userSignIn} = useContext(AuthContext)
+  const { signInWithGoogle, userSignIn } = useContext(AuthContext)
 
   const [error, setError] = useState('');
 
+
+  const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
 
   const handleUserLogin = (event) => {
     event.preventDefault();
@@ -19,31 +25,34 @@ const LoginPage = () => {
     console.log(email, password);
 
     userSignIn(email, password)
-        .then(result => {
-            const recentUser = result.user;
-            console.log(recentUser);
-            form.reset();
+      .then(result => {
+        const recentUser = result.user;
+        console.log(recentUser);
+        form.reset();
+        navigate(from, { replace: true })
 
-        })
-        .catch(error => {
-            console.log(error)
-            setError(error.message)
-        })
-}
+      })
+      .catch(error => {
+        console.log(error)
+        setError(error.message)
+      })
+  }
 
   const handleSignInWithGoogle = () => {
 
     signInWithGoogle()
-    .then(result => {
-      const googleUser = result.user;
-      console.log(googleUser);
-      setUser(googleUser);
-  })
-  .catch(error => {
-      console.log(error.message);
-  })
+      .then(result => {
+        const googleUser = result.user;
+        console.log(googleUser);
+        
+        navigate(from, { replace: true })
 
- 
+      })
+      .catch(error => {
+        console.log(error.message);
+      })
+
+
 
   }
 
@@ -88,7 +97,7 @@ const LoginPage = () => {
           <div className="mt-6 flex items-center justify-center">
             <span className="text-sm text-gray-600">Don't have an account?</span>
             <Link
-            to="/register"
+              to="/register"
               className="ml-2 text-sm font-medium text-red-500 hover:text-black"
             >
               Register here
@@ -96,13 +105,15 @@ const LoginPage = () => {
           </div>
           <div className="mt-6">
             <button
-            onClick={handleSignInWithGoogle}
+              onClick={handleSignInWithGoogle}
               type="button"
               className="py-2 px-4 bg-red-500 hover:bg-black focus:ring-red-500 focus:ring-offset-red-200 text-white w-full rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 text-sm font-medium"
             >
               Sign in with Google
             </button>
           </div>
+          <br />
+          <p className='bg-error'> {error} </p>
         </form>
       </div>
     </div>

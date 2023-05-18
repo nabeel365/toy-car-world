@@ -27,7 +27,7 @@ const ShopByCategory = () => {
 <h1 className="text-2xl mb-4 font-semibold">Shop by Category</h1>
       <div className="border border-red-300 rounded-lg ">
         <Tabs>
-          <TabList className="bg-red-500 flex justify-center">
+          <TabList className="bg-red-300 flex justify-center">
             <Tab className="py-2 px-4 hover:bg-slate-100 focus:bg-red-500">Sports Cars</Tab>
             <Tab className="py-2 px-4 hover:bg-slate-100 focus:bg-red-500">Trucks</Tab>
             <Tab className="py-2 px-4 hover:bg-slate-100 focus:bg-red-500">Police Cars</Tab>

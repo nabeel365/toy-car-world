@@ -12,14 +12,9 @@ storageBucket:import.meta.env.VITE_STORAGEBUCKET,
 messagingSenderId:import.meta.env.VITE_MESSAGINGSENDERID,
 appId:import.meta.env.VITE_APPID,
 
-// apiKey: "AIzaSyC2vHwPePyZVtj0mUKRjubYvjXd9bGe87Q",
-// authDomain: "toycarworld.firebaseapp.com",
-// projectId: "toycarworld",
-// storageBucket: "toycarworld.appspot.com",
-// messagingSenderId: "711782801940",
-// appId: "1:711782801940:web:1c5a18978e6edd1e347d01"
+
 };
-console.log(firebaseConfig);
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export default app;

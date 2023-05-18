@@ -1,12 +1,63 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Register = () => {
+
+
+
+  const { createNewUser, userProfileUpdate} = useContext(AuthContext);
+  
+  const [error, setError] = useState('');
+
+  const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
+
+  const handleUserRegistration = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photoURL = form.photoURL.value
+    // console.log(name, email, password, photoURL);
+
+    setError('')
+
+    if(password.length < 6 ){
+      setError('Password Should be 6 characters or more');
+      return;
+    }
+
+   
+
+    createNewUser(email, password, name, photoURL)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        userProfileUpdate(result.user, name, photoURL);
+
+        form.reset();
+        navigate(from, { replace: true })
+
+
+      })
+      .catch(error => {
+        console.log(error)
+        setError(error.message)
+      })
+  };
+
+
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <div className="max-w-md w-full px-6 py-8 bg-white rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold text-center">Registration</h2>
-        <form className="mt-8">
+        <form onSubmit={handleUserRegistration} className="mt-8">
           <div>
             <label htmlFor="name" className="text-sm font-medium text-gray-700">
               Name
@@ -62,6 +113,9 @@ const Register = () => {
           <br />
 
           <p>Already a user? Please <Link className='ml-2 text-sm font-medium text-red-500 hover:text-black' to="/login">Login</Link> </p>
+        <br />
+        <p className='bg-error'> {error} </p>
+        
         </form>
       </div>
     </div>
