@@ -11,11 +11,13 @@ import Home from './Components/Home/Home.jsx';
 import LoginPage from './Components/LoginPage/LoginPage.jsx';
 import Register from './Components/Register/Register.jsx';
 import Blog from './Components/Blog/Blog.jsx';
+import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home> ,
+    errorElement: <ErrorPage></ErrorPage>
   },
   {
     path: "login",
