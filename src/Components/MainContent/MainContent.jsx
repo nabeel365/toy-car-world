@@ -4,6 +4,7 @@ import CustomerReviews from '../../TwoExtraSections/CustomerReviews';
 import PopularBrands from '../../TwoExtraSections/PopularBrands';
 import Banner from '../Banner/Banner';
 import Gallery from '../Gallery/Gallery';
+import ShopByCategory from '../ShopByCategory/ShopByCategory';
 
 const MainContent = () => {
     return (
@@ -11,6 +12,7 @@ const MainContent = () => {
             {/* <Outlet></Outlet> */}
             <Banner></Banner>
             <Gallery></Gallery>
+            <ShopByCategory></ShopByCategory>
             <CustomerReviews></CustomerReviews>
             <PopularBrands></PopularBrands>
         </div>
