@@ -61,7 +61,7 @@ const AllToys = () => {
                   >
                     View Details
                   </Link>
-                </td>
+                </td> 
               </tr>
             ))}
         </tbody>

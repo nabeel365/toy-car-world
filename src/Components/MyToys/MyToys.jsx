@@ -60,13 +60,13 @@ const MyToys = () => {
                                 <td className="border px-4 py-2">
                                     <button
                                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
-                                        onClick={() => handleUpdate(index)}
+                                        onClick={() => handleUpdate()}
                                     >
                                         Update
                                     </button>
                                     <button
                                         className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-                                        onClick={() => handleDelete(index)}
+                                        onClick={() => handleDelete(toy._id)}
                                     >
                                         Delete
                                     </button>
