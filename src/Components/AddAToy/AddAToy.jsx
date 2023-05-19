@@ -62,7 +62,7 @@ const AddAToy = () => {
 
     console.log(toyData);
 
-    
+
     // form.reset();
 
     setToyData({
@@ -99,7 +99,7 @@ const AddAToy = () => {
 
 
         <div className="mb-4">
-          <label htmlFor="name" className="block mb-2 font-bold">Name:</label>
+          <label htmlFor="name" className="block mb-2 font-bold">Toy Name:</label>
           <input
             type="text"
             name="name"
