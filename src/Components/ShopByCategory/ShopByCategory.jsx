@@ -1,27 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 const ShopByCategory = () => {
+  const typesOfCars = useLoaderData()
+  const [category, setCategory] = useState(typesOfCars);
+  console.log(category);
+  
     return (
         <div>
-            {/* <Tabs>
-    <TabList>
-      <Tab>Sports Cars</Tab>
-      <Tab>Trucks</Tab>
-      <Tab>Police Cars</Tab>
-    </TabList>
-
-    <TabPanel>
-      <h2>Any content 1</h2>
-    </TabPanel>
-    <TabPanel>
-      <h2>Any content 2</h2>
-    </TabPanel>
-    <TabPanel>
-      <h2>Any content 3</h2>
-    </TabPanel>
-  </Tabs> */}
+ 
 
 <div className="p-8">
 <h1 className="text-2xl mb-4 font-semibold">Shop by Category</h1>
@@ -35,7 +24,9 @@ const ShopByCategory = () => {
 
           <TabPanel>
             <div className="p-4">
-              <h2 className="text-xl">Any content 1</h2>
+              <h2 className="text-xl">Any content 1
+
+              </h2>
             </div>
           </TabPanel>
 

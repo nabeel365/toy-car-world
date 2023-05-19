@@ -11,8 +11,21 @@ const MyToys = () => {
         console.log('updated');
     };
 
-    const handleDelete = () => {
-        console.log('deleted');
+    const handleDelete = (_id) => {
+        console.log('deleted', _id);
+        fetch(`http://localhost:1000/toys/${_id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount > 0) {
+                    alert('Deleted successfully');
+                    const remaining = toys.filter(toy => toy._id !== _id);
+                    setMyToys(remaining);
+                }
+            });
+
     };
 
     return (
@@ -30,7 +43,6 @@ const MyToys = () => {
                             <th className="px-4 py-2">Rating</th>
                             <th className="px-4 py-2">Available Quantity</th>
                             <th className="px-4 py-2">Detail Description</th>
-                            <th className="px-4 py-2">Actions</th>
                         </tr>
                     </thead>
                     <tbody>

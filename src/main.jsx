@@ -18,11 +18,14 @@ import MyToys from './Components/MyToys/MyToys.jsx';
 import AllToys from './Components/AllToys/AllToys.jsx';
 import AddAToy from './Components/AddAToy/AddAToy.jsx';
 import PrivateRoute from './Routes/PrivateRoute.jsx';
+import ShopByCategory from './Components/ShopByCategory/ShopByCategory.jsx';
+import ToysDetails from './Components/ToysDetails/ToysDetails.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home></Home> ,
+    element: <Home></Home>,
+
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
@@ -53,14 +56,21 @@ const router = createBrowserRouter([
       },
       {
         path: "toys",
-        element: <AllToys></AllToys>
+        element: <AllToys></AllToys>,
+        loader: () => fetch('http://localhost:1000/toys'),
+
+      },
+      {
+        path: "toyDetails",
+        element: <PrivateRoute><ToysDetails></ToysDetails></PrivateRoute>
       }
+
 
 
 
     ]
   },
-  
+
 
 ]);
 
@@ -68,7 +78,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
-   <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>,
 )
