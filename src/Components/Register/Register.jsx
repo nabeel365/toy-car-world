@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import pageTitle from '../pageTitle/pageTitle';
 
 const Register = () => {
 
+  pageTitle('Register')
 
 
   const { createNewUser, userProfileUpdate} = useContext(AuthContext);

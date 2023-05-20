@@ -1,9 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import pageTitle from '../pageTitle/pageTitle';
 
 const LoginPage = () => {
 
+  pageTitle('Login')
+  
   const { signInWithGoogle, userSignIn } = useContext(AuthContext)
 
   const [error, setError] = useState('');
@@ -14,7 +17,6 @@ const LoginPage = () => {
   const location = useLocation();
 
   const from = location.state?.from?.pathname || '/';
-console.log(from);
   const handleUserLogin = (event) => {
     event.preventDefault();
 

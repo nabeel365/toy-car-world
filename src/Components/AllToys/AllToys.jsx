@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import pageTitle from '../pageTitle/pageTitle';
 
 const AllToys = () => {
+
+  pageTitle('All Toys')
+
   const allToys = useLoaderData();
   const [id] = allToys;
   

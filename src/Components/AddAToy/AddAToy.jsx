@@ -1,10 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import swal from 'sweetalert';
+import pageTitle from '../pageTitle/pageTitle';
 
 const AddAToy = () => {
 
-  
+  pageTitle('Add A Toy')
 
   // const [user] = useContext(AuthContext)
   // console.log(user);

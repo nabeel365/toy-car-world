@@ -3,8 +3,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import swal from 'sweetalert';
+import pageTitle from '../pageTitle/pageTitle';
 
 const MyToys = () => {
+
+  pageTitle('My Toys')
   const addedToys = useLoaderData();
   console.log(addedToys);
 

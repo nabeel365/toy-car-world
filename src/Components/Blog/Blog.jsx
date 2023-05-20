@@ -1,6 +1,9 @@
 import React from 'react';
+import pageTitle from '../pageTitle/pageTitle';
 
 const Blog = () => {
+
+    pageTitle('Blogs')
     return (
         <div>
 

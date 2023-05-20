@@ -22,7 +22,7 @@ const MainContent = () => {
 
 
   const alertSweet = () => {
-    swal("Oops!!! You need to login first");
+    swal("Hmmm!!! You need to login first");
     return
   }
 
@@ -30,20 +30,22 @@ const MainContent = () => {
   // aos 
 
   useEffect(() => {
-    AOS.init({}); 
+    AOS.init({});
   }, []);
 
+
+  
   return (
     <div>
       {/* <Outlet></Outlet> */}
 
       <div data-aos="fade-up">
-      <Banner></Banner>
+        <Banner></Banner>
 
       </div>
 
       <div data-aos="zoom-in">
-      <Gallery></Gallery>
+        <Gallery></Gallery>
 
       </div>
 
@@ -51,7 +53,7 @@ const MainContent = () => {
 
       {/* shop by category */}
 
-      <div  className="p-8">
+      <div className="p-8">
         <h1 className="text-2xl mb-4 font-semibold">Shop by Category</h1>
         <div className="border border-red-300 rounded-lg">
           <Tabs className="">
@@ -69,14 +71,17 @@ const MainContent = () => {
                       <figure>
                         <img src={toy.pictureUrl} alt={toy.name} className="w-full h-auto" />
                       </figure>
-                      <div  className="card-body p-4">
+                      <div className="card-body p-4">
                         <h2 className="card-title">Name: {toy.name}</h2>
                         <h2 className="card-title">Category: {toy.subCategory}</h2>
                         <h2 className="card-title">Price: ${toy.price}</h2>
                         <h2 className="card-title">Ratings: {toy.rating}</h2>
 
                         <div className="card-actions justify-end">
-                          <Link >
+                          <Link
+                            to={`/toyDetail/${toy._id}`}
+
+                          >
                             <button className="btn btn-primary" onClick={alertSweet}>View Details</button>
 
                           </Link>
@@ -96,7 +101,7 @@ const MainContent = () => {
                       <figure>
                         <img src={toy.pictureUrl} alt={toy.name} className="w-full h-auto" />
                       </figure>
-                      <div  className="card-body p-4">
+                      <div className="card-body p-4">
                         <h2 className="card-title">Name: {toy.name}</h2>
                         <h2 className="card-title">Category: {toy.subCategory}</h2>
                         <h2 className="card-title">Price: ${toy.price}</h2>
@@ -104,8 +109,9 @@ const MainContent = () => {
 
                         <div className="card-actions justify-end">
 
-                          <Link 
-                          // to={`/toyDetail/${id}`}
+                          <Link
+                            to={`/toyDetail/${toy._id}`}
+
                           >
                             <button className="btn btn-primary" onClick={alertSweet}>View Details</button>
 
@@ -134,7 +140,10 @@ const MainContent = () => {
                         <h2 className="card-title">Ratings: {toy.rating}</h2>
                         <div className="card-actions justify-end">
 
-                          <Link >
+                          <Link
+                            to={`/toyDetail/${toy._id}`}
+
+                          >
                             <button className="btn btn-primary" onClick={alertSweet}>View Details</button>
 
                           </Link>
@@ -153,15 +162,15 @@ const MainContent = () => {
 
       {/* shop by category */}
 
-<div data-aos="bounce">
-<CustomerReviews></CustomerReviews>
+      <div data-aos="bounce">
+        <CustomerReviews></CustomerReviews>
 
-</div>
+      </div>
 
-<div data-aos="flip-left">
-<PopularBrands></PopularBrands>
+      <div data-aos="flip-left">
+        <PopularBrands></PopularBrands>
 
-</div>
+      </div>
 
     </div>
   );
