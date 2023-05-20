@@ -14,7 +14,7 @@ const LoginPage = () => {
   const location = useLocation();
 
   const from = location.state?.from?.pathname || '/';
-
+console.log(from);
   const handleUserLogin = (event) => {
     event.preventDefault();
 
