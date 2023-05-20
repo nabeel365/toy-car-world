@@ -3,6 +3,8 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const AllToys = () => {
   const allToys = useLoaderData();
+  const [id] = allToys;
+  
   console.log(allToys);
   const [searchTerm, setSearchTerm] = useState('');
   const [visibleToys, setVisibleToys] = useState(20);
@@ -56,6 +58,7 @@ const AllToys = () => {
                 <td className="py-2">{toy.quantity}</td>
                 <td className="py-2">
                   <Link
+                  to={`/toyDetail/${id}`}
                   
                     className="px-4 py-2 rounded bg-black text-white"
                   >

@@ -42,17 +42,17 @@ const CustomerReviews = () => {
   ];
 
   return (
-    <section className="bg-gray-100 py-10">
-      <div className="container mx-auto">
+    <section  className="bg-gray-100 py-10">
+      <div  className="container mx-auto">
         <h2 data-aos="flip-left" className="text-3xl font-semibold mb-8">Customer Reviews</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {reviews.map((review) => (
-            <div key={review.id} className="bg-white p-6 shadow-md rounded-md">
+            <div  key={review.id} className="bg-white p-6 shadow-md rounded-md">
               <div className="flex items-center mb-4">
                 <div className="rounded-full bg-blue-500 w-10 h-10 flex items-center justify-center text-white font-semibold text-xl">
                   {review.name.charAt(0)}
                 </div>
-                <div className="ml-3">
+                <div  className="ml-3">
                   <h3 className="text-lg font-semibold">{review.name}</h3>
                   <div className="flex items-center mt-1">
                     {Array.from({ length: review.rating }, (_, index) => (
