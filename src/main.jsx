@@ -20,6 +20,7 @@ import AddAToy from './Components/AddAToy/AddAToy.jsx';
 import PrivateRoute from './Routes/PrivateRoute.jsx';
 import ShopByCategory from './Components/ShopByCategory/ShopByCategory.jsx';
 import ToysDetails from './Components/ToysDetails/ToysDetails.jsx';
+import UpdateToyDetails from './Components/UpdateToyDetails/UpdateToyDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,9 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <MainContent></MainContent>
+        element: <MainContent></MainContent>,
+        loader: () => fetch('http://localhost:1000/toys')
+
 
       },
       {
@@ -63,7 +66,19 @@ const router = createBrowserRouter([
       {
         path: "toyDetails",
         element: <PrivateRoute><ToysDetails></ToysDetails></PrivateRoute>
+      },
+      {
+        path:'update/:id',
+        element: <UpdateToyDetails></UpdateToyDetails>,
+        loader: ({params}) => fetch(`http://localhost:1000/toys/${params.id}`)
+      },
+      {
+        path:"shop",
+        element: <ShopByCategory></ShopByCategory>,
+        loader: () => fetch('http://localhost:1000/toys')
+
       }
+
 
 
 
