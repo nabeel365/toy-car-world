@@ -66,7 +66,7 @@ const MainContent = () => {
             <TabPanel>
               <div className="p-4 sm:flex gap-5 flex-wrap">
                 {sportsCars.map(toy => (
-                  <div key={toy.id} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                  <div key={toy._id} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
                     <div data-aos="slide-up" className="card bg-base-100 shadow-xl mb-4">
                       <figure>
                         <img src={toy.pictureUrl} alt={toy.name} className="w-full h-auto" />
@@ -96,7 +96,7 @@ const MainContent = () => {
             <TabPanel>
               <div className="p-4 sm:flex gap-5 flex-wrap">
                 {trucks.map(toy => (
-                  <div key={toy.id} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                  <div key={toy._id} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
                     <div data-aos="slide-up" className="card bg-base-100 shadow-xl mb-4">
                       <figure>
                         <img src={toy.pictureUrl} alt={toy.name} className="w-full h-auto" />
@@ -128,7 +128,7 @@ const MainContent = () => {
             <TabPanel>
               <div className="p-4 sm:flex gap-5 flex-wrap">
                 {policeCars.map(toy => (
-                  <div key={toy.id} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                  <div key={toy._id} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
                     <div data-aos="slide-up" className="card bg-base-100 shadow-xl mb-4">
                       <figure>
                         <img src={toy.pictureUrl} alt={toy.name} className="w-full h-auto" />

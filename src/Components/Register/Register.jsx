@@ -73,6 +73,7 @@ const Register = () => {
               Name
             </label>
             <input
+              name='name'
               type="text"
               id="name"
               className="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
@@ -84,6 +85,7 @@ const Register = () => {
               Email
             </label>
             <input
+              name='email'
               type="email"
               id="email"
               className="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
@@ -95,6 +97,7 @@ const Register = () => {
               Password
             </label>
             <input
+              name='password'
               type="password"
               id="password"
               className="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
@@ -106,6 +109,7 @@ const Register = () => {
               Photo URL
             </label>
             <input
+              name='photoURL'
               type="text"
               id="photoURL"
               className="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
