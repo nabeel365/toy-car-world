@@ -1,11 +1,12 @@
 import React from 'react';
-import { Outlet, useLoaderData } from 'react-router-dom';
+import { Link, Outlet, useLoaderData } from 'react-router-dom';
 import CustomerReviews from '../../TwoExtraSections/CustomerReviews';
 import PopularBrands from '../../TwoExtraSections/PopularBrands';
 import Banner from '../Banner/Banner';
 import Gallery from '../Gallery/Gallery';
 import ShopByCategory from '../ShopByCategory/ShopByCategory';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
+import swal from 'sweetalert';
 
 const MainContent = () => {
   const allTheToys = useLoaderData();
@@ -15,6 +16,12 @@ const MainContent = () => {
   const sportsCars = allTheToys.filter(toy => toy.subCategory === 'SportsCars');
   const trucks = allTheToys.filter(toy => toy.subCategory === 'Trucks');
   const policeCars = allTheToys.filter(toy => toy.subCategory === 'PoliceCars');
+
+
+  const alertSweet = () => {
+    swal("Oops!!! You need to login first");
+    return
+  }
 
   return (
     <div>
@@ -49,7 +56,10 @@ const MainContent = () => {
                         <h2 className="card-title">Ratings: {toy.rating}</h2>
 
                         <div className="card-actions justify-end">
-                          <button className="btn btn-primary">View Details</button>
+                          <Link >
+                            <button className="btn btn-primary" onClick={alertSweet}>View Details</button>
+
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -73,7 +83,12 @@ const MainContent = () => {
                         <h2 className="card-title">Ratings: {toy.rating}</h2>
 
                         <div className="card-actions justify-end">
-                          <button className="btn btn-primary">View Details</button>
+
+                          <Link>
+                            <button className="btn btn-primary" onClick={alertSweet}>View Details</button>
+
+                          </Link>
+
                         </div>
                       </div>
                     </div>
@@ -96,7 +111,13 @@ const MainContent = () => {
                         <h2 className="card-title">Price: ${toy.price}</h2>
                         <h2 className="card-title">Ratings: {toy.rating}</h2>
                         <div className="card-actions justify-end">
-                          <button className="btn btn-primary">View Details</button>
+
+                          <Link >
+                            <button className="btn btn-primary" onClick={alertSweet}>View Details</button>
+
+                          </Link>
+
+
                         </div>
                       </div>
                     </div>

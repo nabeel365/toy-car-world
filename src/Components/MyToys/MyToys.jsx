@@ -2,6 +2,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import swal from 'sweetalert';
 
 const MyToys = () => {
   const addedToys = useLoaderData();
@@ -30,7 +31,7 @@ const MyToys = () => {
       .then((data) => {
         console.log(data);
         if (data.deletedCount > 0) {
-          alert('Deleted successfully');
+          swal('Deleted successfully');
           const remaining = myToys.filter((toy) => toy._id !== _id);
           setMyToys(remaining);
         }
@@ -76,12 +77,38 @@ const MyToys = () => {
                       </button>
                     </Link>
                   </div>
-                  <button
+
+
+{/* modal for delete */}
+
+{/* The button to open modal */}
+<label htmlFor="my-modal-6" className=" bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</label>
+
+{/* Put this part before </body> tag */}
+<input type="checkbox" id="my-modal-6" className="modal-toggle" />
+<div className="modal modal-bottom sm:modal-middle">
+  <div className="modal-box">
+    <h3 className="font-bold text-lg">Are you sure you want to delete ?</h3>
+    <div className="modal-action">
+      <label htmlFor="my-modal-6" className="btn">
+      <button
                     className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
                     onClick={() => handleDelete(toy._id)}
                   >
-                    Delete
+                   Yes Delete
                   </button>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+                 
                 </td>
               </tr>
             ))}
@@ -93,4 +120,6 @@ const MyToys = () => {
 };
 
 export default MyToys;
+
+
 

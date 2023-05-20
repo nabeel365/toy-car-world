@@ -2,7 +2,8 @@ import React from 'react';
 import Footer from '../Footer/Footer';
 import Navigation from '../Navigation/Navigation';
 import MainContent from '../MainContent/MainContent';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Route, Router } from 'react-router-dom';
+import AllToys from '../AllToys/AllToys';
 
 const Home = () => {
     return (
@@ -12,6 +13,9 @@ const Home = () => {
             <Outlet></Outlet>
             
             <Footer></Footer>
+
+
+            
         </div>
     );
 };
