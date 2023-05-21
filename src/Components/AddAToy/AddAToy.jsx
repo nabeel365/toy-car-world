@@ -55,7 +55,7 @@ const AddAToy = () => {
       description};
 
 
-    fetch('http://localhost:1000/toys', {
+    fetch('https://cars-server-pi.vercel.app/toys', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -144,6 +144,7 @@ const AddAToy = () => {
             onChange={handleInputChange}
             className="border border-gray-300 rounded-md px-3 py-2 w-full"
             // defaultValue={}
+            placeholder='Enter the email with which you logged in'
           />
         </div>
 

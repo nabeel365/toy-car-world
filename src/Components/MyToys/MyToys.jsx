@@ -15,7 +15,7 @@ const MyToys = () => {
   const [sortBy, setSortBy] = useState('asc');
 
   const { user } = useContext(AuthContext);
-  const url = `http://localhost:1000/toys?email=${user?.email}`;
+  const url = `https://cars-server-pi.vercel.app/toys?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -28,7 +28,7 @@ const MyToys = () => {
 
   const handleDelete = (_id) => {
     console.log('deleted', _id);
-    fetch(`http://localhost:1000/toys/${_id}`, {
+    fetch(`https://cars-server-pi.vercel.app/toys/${_id}`, {
       method: 'DELETE',
     })
       .then((res) => res.json())

@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <MainContent></MainContent>,
-        loader: () => fetch('http://localhost:1000/toys')
+        loader: () => fetch('https://cars-server-pi.vercel.app/toys')
 
 
       },
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
       {
         path: "mytoys",
         element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
-        loader: () => fetch('http://localhost:1000/toys')
+        loader: () => fetch('https://cars-server-pi.vercel.app/toys')
       },
       {
         path: "addtoy",
@@ -60,25 +60,25 @@ const router = createBrowserRouter([
       {
         path: "toys",
         element: <AllToys></AllToys>,
-        loader: () => fetch('http://localhost:1000/toys'),
+        loader: () => fetch('https://cars-server-pi.vercel.app/toys'),
 
       },
       {
         path: "toyDetail/:id",
         element: <PrivateRoute><ToysDetails></ToysDetails></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:1000/toyDetails/${params.id}`)
+        loader: ({params}) => fetch(`https://cars-server-pi.vercel.app/toyDetails/${params.id}`)
 
 
       },
       {
         path:'update/:id',
         element: <UpdateToyDetails></UpdateToyDetails>,
-        loader: ({params}) => fetch(`http://localhost:1000/toyDetails/${params.id}`)
+        loader: ({params}) => fetch(`https://cars-server-pi.vercel.app/toyDetails/${params.id}`)
       },
       {
         path:"shop",
         element: <ShopByCategory></ShopByCategory>,
-        loader: () => fetch('http://localhost:1000/toys')
+        loader: () => fetch('https://cars-server-pi.vercel.app/toys')
 
       }
 

@@ -19,7 +19,7 @@ const UpdateToyDetails = () => {
         const updatedToy = {price, quantity, description};
 
         
-        fetch(`http://localhost:1000/update/${allMyToys._id}`, {
+        fetch(`https://cars-server-pi.vercel.app/update/${allMyToys._id}`, {
   method: 'PUT',
   headers: {
     'content-type': 'application/json'
