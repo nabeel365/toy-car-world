@@ -1,6 +1,14 @@
+// ............................. 
+// NOTE- please check with a small photo url, too long photo url does not work.. 
+// ............................. 
+
+
+
+
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+
 
 const Navigation = () => {
   const { user, userLogOut, userProfileUpdate } = useContext(AuthContext);

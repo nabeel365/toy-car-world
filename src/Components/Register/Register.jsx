@@ -25,7 +25,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     const photoURL = form.photoURL.value
-    // console.log(name, email, password, photoURL);
+    console.log(name, email, password, photoURL);
 
     setError('')
 
@@ -48,7 +48,7 @@ const Register = () => {
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        userProfileUpdate(result.user, name, photoURL);
+        userProfileUpdate( name, photoURL);
 
         form.reset();
         navigate(from, { replace: true })
